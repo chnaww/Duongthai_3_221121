@@ -6,7 +6,14 @@ body {
   min-width: 350px;
   font-family: "Roboto", sans-serif;
   margin: auto;
-  padding: 0;
+  padding: 1rem 0;
+}
+body a {
+  text-decoration: none;
+  color: black;
+}
+body ul {
+  list-style-type: none;
 }
 
 main {
@@ -43,7 +50,7 @@ header {
   padding: 1rem 0;
 }
 .location__title--bold {
-  font-weight: bold;
+  font-weight: 1000;
   font-size: 1.5rem;
 }
 .location__btn {
@@ -58,7 +65,7 @@ header {
 }
 
 .function {
-  padding: 0 1rem;
+  padding: 1.5rem 1rem;
 }
 .function__list {
   display: flex;
@@ -99,6 +106,79 @@ header {
 .function button span {
   font-size: 1rem;
   font-weight: bolder;
+}
+
+.restaurants {
+  background-color: #F6F6F6;
+  padding: 1rem;
+}
+.restaurants__card {
+  width: 100%;
+  max-width: 550px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 3px 10px 0 #aaa;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+.restaurants__card a {
+  height: 100%;
+  cursor: pointer;
+}
+
+.card__img {
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+.card__img img {
+  width: 100%;
+  margin: 0;
+  object-fit: contain;
+  top: -50%;
+  position: absolute;
+}
+.card__img p {
+  position: absolute;
+  top: 0%;
+  right: 5%;
+  background-color: #99E2D0;
+  padding: 0.5rem;
+}
+.card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+.card__description h4 {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  font-weight: 1000;
+  font-size: 1.1rem;
+}
+.card__description p {
+  margin-top: 0.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 1rem;
+}
+.footer__title {
+  font-family: "Shrikhand", cursive;
+}
+.footer__menu ul {
+  padding: 0;
+}
+.footer__menu ul li {
+  padding: 0;
+}
+.footer__menu ul li a {
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
