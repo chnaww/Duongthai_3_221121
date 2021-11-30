@@ -63,6 +63,24 @@ header {
   padding: 1rem;
   border-radius: 1.5rem;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.location__btn button:hover::after {
+  opacity: 1;
+}
+.location__btn button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ff55d0;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+  border-radius: 1.5rem;
 }
 
 .function {
@@ -123,6 +141,9 @@ header {
   box-shadow: 0 3px 10px 0 #aaa;
   margin: auto;
   margin-bottom: 1rem;
+}
+.restaurants__card:hover {
+  box-shadow: 2px 2px 10px #353535;
 }
 .restaurants__card a {
   height: 100%;

@@ -152,6 +152,37 @@ main {
   animation-delay: 3000ms;
 }
 
+.location__btn {
+  margin: 2rem 0;
+  text-align: center;
+}
+.location__btn button {
+  color: white;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.location__btn button:hover::after {
+  opacity: 1;
+}
+.location__btn button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ff55d0;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+  border-radius: 1.5rem;
+}
+
 .footer {
   background-color: #353535;
   color: white;
