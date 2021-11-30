@@ -128,7 +128,7 @@ main {
         animation-fill-mode: backwards;
         @for $i from 1 through $count {
             &--#{$i} {
-                animation-delay: $anim-delay * $i * 1.2 ;
+                animation-delay: $anim-delay * $i * 1.5 ;
             }
         }
     }
