@@ -1,0 +1,65 @@
+.card{
+    &__img {
+        height: 150px;
+        overflow: hidden;
+        position: relative;
+            img{
+                width: 100%;
+                margin: 0;
+                object-fit: contain;
+                top: -50%;
+                position: absolute;
+            }
+            p{
+                position: absolute;
+                top: 0%;
+                right: 5%;
+                background-color: $colour-tertiary;
+                padding: 0.5rem;
+            }
+    }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+    }
+    &__description {
+        h4 {
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
+            font-weight: 1000;
+            font-size: 1.1rem;
+        }
+        p {
+            margin-top: 0.2rem;
+            margin-bottom: 0.7rem;
+        }
+    }
+    &__favorite {
+        input {
+            position: absolute;
+            left: -9999px;
+        }
+        & label{
+            cursor: pointer;
+            position: relative;
+            & .fas {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                transition: opacity 250ms;
+                color: $colour-primary;
+            }
+        }
+        & input:checked + label .fas{
+            opacity: 1;
+        }
+        & input:checked + label .far{
+            color: $colour-primary;
+        }
+    }
+}

@@ -20,16 +20,136 @@ main {
   max-width: 1290px;
 }
 
+.main__page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   width: 100%;
+}
+
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 1rem;
+}
+.footer__title {
+  font-family: "Shrikhand", cursive;
+}
+.footer__menu ul {
+  padding: 0;
+}
+.footer__menu ul li {
+  padding: 0;
+}
+.footer__menu ul li a {
+  color: white;
 }
 
 .header__logo {
   text-align: center;
 }
+.header__logo a {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
 .header__logo img {
   width: 50%;
   max-width: 300px;
+}
+
+.button__layout {
+  margin: 2rem 0;
+  text-align: center;
+}
+.button__layout button {
+  color: white;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.button__layout button:hover::after {
+  opacity: 1;
+}
+.button__layout button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ff55d0;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+  border-radius: 1.5rem;
+}
+
+.card__img {
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+.card__img img {
+  width: 100%;
+  margin: 0;
+  object-fit: contain;
+  top: -50%;
+  position: absolute;
+}
+.card__img p {
+  position: absolute;
+  top: 0%;
+  right: 5%;
+  background-color: #99E2D0;
+  padding: 0.5rem;
+}
+.card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+.card__description h4 {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  font-weight: 1000;
+  font-size: 1.1rem;
+}
+.card__description p {
+  margin-top: 0.2rem;
+  margin-bottom: 0.7rem;
+}
+.card__favorite input {
+  position: absolute;
+  left: -9999px;
+}
+.card__favorite label {
+  cursor: pointer;
+  position: relative;
+}
+.card__favorite label .fas {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 250ms;
+  color: #9356DC;
+}
+.card__favorite input:checked + label .fas {
+  opacity: 1;
+}
+.card__favorite input:checked + label .far {
+  color: #9356DC;
 }
 
 .location {
@@ -52,35 +172,6 @@ header {
 .location__title--bold {
   font-weight: 1000;
   font-size: 1.5rem;
-}
-.location__btn {
-  margin: 1rem 0;
-}
-.location__btn button {
-  color: white;
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  border: none;
-  padding: 1rem;
-  border-radius: 1.5rem;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-}
-.location__btn button:hover::after {
-  opacity: 1;
-}
-.location__btn button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #ff55d0;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 250ms;
-  border-radius: 1.5rem;
 }
 
 .function {
@@ -150,82 +241,126 @@ header {
   cursor: pointer;
 }
 
-.card__img {
-  height: 150px;
+.banner {
+  z-index: 1;
   overflow: hidden;
-  position: relative;
 }
-.card__img img {
+.banner img {
   width: 100%;
-  margin: 0;
-  object-fit: contain;
-  top: -50%;
-  position: absolute;
+  height: 250px;
+  object-fit: cover;
 }
-.card__img p {
-  position: absolute;
-  top: 0%;
-  right: 5%;
-  background-color: #99E2D0;
-  padding: 0.5rem;
+
+.menu {
+  margin-top: -15%;
+  background-color: #F6F6F6;
+  z-index: 200;
+  border-radius: 2rem 2rem 0 0;
 }
-.card__body {
+.menu__title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
-}
-.card__description h4 {
-  margin-top: 0.1rem;
-  margin-bottom: 0.1rem;
-  font-weight: 1000;
-  font-size: 1.1rem;
-}
-.card__description p {
-  margin-top: 0.2rem;
-  margin-bottom: 0.7rem;
-}
-.card__favorite input {
-  position: absolute;
-  left: -9999px;
-}
-.card__favorite label {
-  cursor: pointer;
-  position: relative;
-}
-.card__favorite label .fas {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transition: opacity 250ms;
-  color: #9356DC;
-}
-.card__favorite input:checked + label .fas {
-  opacity: 1;
-}
-.card__favorite input:checked + label .far {
-  color: #9356DC;
+  font-family: "Shrikhand", cursive;
+  padding: 0.5rem 1rem;
 }
 
-.footer {
-  background-color: #353535;
+.starters {
+  padding: 0 1rem;
+}
+
+.dish {
+  border-radius: 1rem;
+  background-color: white;
+  border: none;
+  margin: auto;
+  height: 70px;
+  cursor: pointer;
+  max-width: 600px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.dish:hover .dish__selection {
+  transform: translateX(0);
+  width: 20%;
+}
+.dish:hover .dish__selection i {
+  transform: rotate(-1turn);
+}
+.dish__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0.7rem;
+  width: 100%;
+}
+.dish__selection {
+  transform: translatex(100%);
+  background-color: #99E2D0;
+  height: 100%;
   color: white;
-  padding: 1rem;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 500ms ease;
 }
-.footer__title {
-  font-family: "Shrikhand", cursive;
+.dish__selection i {
+  transition: transform 500ms ease-in;
 }
-.footer__menu ul {
-  padding: 0;
+.dish__anim {
+  animation: opacity 1000ms;
+  animation-fill-mode: backwards;
 }
-.footer__menu ul li {
-  padding: 0;
+.dish__anim--1 {
+  animation-delay: 250ms;
 }
-.footer__menu ul li a {
-  color: white;
+.dish__anim--2 {
+  animation-delay: 500ms;
+}
+.dish__anim--3 {
+  animation-delay: 750ms;
+}
+.dish__anim--4 {
+  animation-delay: 1000ms;
+}
+.dish__anim--5 {
+  animation-delay: 1250ms;
+}
+.dish__anim--6 {
+  animation-delay: 1500ms;
+}
+.dish__anim--7 {
+  animation-delay: 1750ms;
+}
+.dish__anim--8 {
+  animation-delay: 2000ms;
+}
+.dish__anim--9 {
+  animation-delay: 2250ms;
+}
+.dish__anim--10 {
+  animation-delay: 2500ms;
+}
+.dish__anim--11 {
+  animation-delay: 2750ms;
+}
+.dish__anim--12 {
+  animation-delay: 3000ms;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

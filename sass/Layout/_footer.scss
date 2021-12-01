@@ -1,0 +1,17 @@
+.footer {
+    background-color: $colour-footer;
+    color: white;
+    padding: 1rem;
+    &__title {
+        font-family: $font-header;
+    }
+    &__menu ul {
+            padding: 0;
+            li {
+                padding: 0;
+                a {
+                    color: white;
+                }
+            }
+    }
+}

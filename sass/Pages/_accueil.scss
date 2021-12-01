@@ -1,0 +1,88 @@
+.location {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+        &__city {
+            background-color: darken($colour-header, 5%);
+            padding: 1rem 0;
+            box-shadow: inset 0px 3px #dddddd;
+                span {
+                    font-weight: 900;
+                }
+        }
+        &__title {
+            background-color: $colour-header;
+            padding: 1rem 0;
+                &--bold {
+                    font-weight: 1000;
+                    font-size: 1.5rem;
+                }
+        }
+}
+
+.function {
+    padding: 1.5rem 1rem;
+        &__list {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            padding: 0 1rem;
+        }
+            button {
+                display: flex;
+                align-items: center;
+                margin: 0.5rem;
+                border: none;
+                border-radius: 1.5rem;
+                padding: 1rem;
+                width: 100%;
+                max-height: 70px;
+                max-width: 650px;
+                cursor: pointer;
+                    &:hover {
+                        background-color: lighten($colour-primary, $amount:30%);
+                            i{
+                                color: $colour-primary;
+                            }
+                    }
+                    p {
+                        padding: 0.5rem 0.6rem;
+                        background-color: $colour-primary;
+                        border-radius: 50%;
+                        margin-left: -30px;
+                        font-size: 0.7rem;
+                        color: white;
+                    }
+                    i {
+                        padding: 0 1.5rem;
+                        font-size: 1rem;
+                        color: grey;
+                    }
+                    span {
+                        font-size: 1rem;
+                        font-weight: bolder;
+                    }
+            }
+}
+
+.restaurants {
+    background-color: $colour-header;
+    padding: 1rem;
+        &__card {
+            width: 100%;
+            max-width: 550px;
+            overflow: hidden;
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 3px 10px 0 #aaa;
+            margin: auto;
+            margin-bottom: 1rem;
+            &:hover{
+                box-shadow: 2px 2px 10px $colour-footer;
+            }
+                a{
+                    height: 100%;
+                    cursor: pointer;
+                }
+        }
+}

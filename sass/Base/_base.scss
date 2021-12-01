@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 350px;
+    font-family: $font-text;
+    margin: auto;
+    padding: 1rem 0;
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        ul{
+            list-style-type: none;
+        }
+}
+
+main {
+    max-width: 1290px;
+}
+
+.main {
+    &__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+header {
+    width: 100%;
+}
