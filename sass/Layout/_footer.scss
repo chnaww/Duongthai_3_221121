@@ -4,14 +4,21 @@
     padding: 1rem;
     &__title {
         font-family: $font-header;
+        font-size: 1.2rem;
     }
-    &__menu ul {
-            padding: 0;
-            li {
+    &__menu {
+        ul {
                 padding: 0;
-                a {
-                    color: white;
+                li {
+                    padding: 0;
+                    margin: 0.5rem 0;
+                    a {
+                        color: white;
+                    }
+                    i {
+                        width: 1.5rem;
+                    }
                 }
-            }
+        }
     }
 }
