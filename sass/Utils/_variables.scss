@@ -14,3 +14,7 @@ $logo-max-width: 300px;
 $count: 13;
 $anim-dur: 1000ms;
 $anim-delay: $anim-dur / $count *2;
+
+$breakpoints: (
+    desktop: 768px
+    );

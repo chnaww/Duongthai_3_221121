@@ -1,9 +1,10 @@
 .header__logo {
     text-align: center;
+    position: relative;
         a{
             position: absolute;
             left: 1rem;
-            top: 1rem;
+            top: 5%;
         }
         > img {
             width: 50%;

@@ -17,6 +17,7 @@ body ul {
 }
 
 main {
+  margin: auto;
   max-width: 1290px;
 }
 
@@ -55,11 +56,12 @@ header {
 
 .header__logo {
   text-align: center;
+  position: relative;
 }
 .header__logo a {
   position: absolute;
   left: 1rem;
-  top: 1rem;
+  top: 5%;
 }
 .header__logo > img {
   width: 50%;
@@ -162,6 +164,49 @@ header {
   opacity: 0;
 }
 
+.loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  z-index: 20000;
+  opacity: 0.5;
+}
+.loading i {
+  margin: auto;
+  font-size: 10rem;
+  animation: spin 3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    color: #9356DC;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    color: #FF79DA;
+    opacity: 0;
+  }
+}
+.opacity {
+  animation: opacity 1s 2.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes opacity-accueil {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .location {
   display: flex;
   flex-direction: column;
