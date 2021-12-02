@@ -1,7 +1,14 @@
+@import "../Utils/mixins";
+
 .footer {
     background-color: $colour-footer;
     color: white;
     padding: 1rem;
+    @include tablette-only {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 3rem;
+    }
     &__title {
         font-family: $font-header;
         font-size: 1.2rem;

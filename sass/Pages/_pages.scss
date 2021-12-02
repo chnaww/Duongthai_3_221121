@@ -14,6 +14,10 @@
     background-color: $colour-header;
     z-index: 200;
     border-radius: 2rem 2rem 0 0;
+    @include desktop-only{
+        margin-top: 0;
+        border-radius: 0%;
+    }
     &__title{
         display: flex;
         justify-content: space-between;
@@ -22,6 +26,13 @@
         padding: 0.5rem 1rem;
         i {
             padding-right: 2rem;
+        }
+    }
+    &__container{
+        @include desktop-only{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
         }
     }
 }
@@ -44,7 +55,7 @@
     margin: auto;
     height: 70px;
     cursor: pointer;
-    max-width: 600px;
+    max-width: 550px;
     margin-bottom: 0.5rem;
     display: flex;
     justify-content: space-between;
