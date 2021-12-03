@@ -109,7 +109,7 @@ header {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #9052db;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   opacity: 0;
   z-index: -1;
   transition: opacity 250ms;
