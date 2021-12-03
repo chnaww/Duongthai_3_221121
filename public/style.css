@@ -144,6 +144,10 @@ header {
   align-items: center;
   padding: 0.2rem 1rem;
 }
+.card__body a {
+  cursor: pointer;
+  width: 100%;
+}
 .card__description h4 {
   margin-top: 0.3rem;
   margin-bottom: 0.2rem;
@@ -424,7 +428,7 @@ header {
 }
 .dish:hover .dish__selection {
   transform: translateX(0);
-  width: 30%;
+  width: 20%;
 }
 .dish:hover .dish__selection i {
   transform: rotate(-1turn);
