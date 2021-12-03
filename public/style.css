@@ -143,9 +143,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.2rem 1rem;
+  cursor: pointer;
 }
 .card__body a {
-  cursor: pointer;
   width: 100%;
 }
 .card__description h4 {
