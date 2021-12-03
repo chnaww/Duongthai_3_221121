@@ -174,9 +174,9 @@ header {
   left: 0;
   right: 0;
   transition: opacity 250ms;
-  color: #9356DC;
-  background: linear-gradient(to bottom, #FF79DA, #9356DC);
-  background-clip: text;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .card__favorite input:checked + label .fas {
   opacity: 1;
