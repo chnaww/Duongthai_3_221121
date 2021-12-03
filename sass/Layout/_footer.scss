@@ -7,7 +7,8 @@
     @include tablette-only {
         display: flex;
         justify-content: space-between;
-        padding: 1rem 3rem;
+        align-items: center;
+        padding: 1rem 1.5rem;
     }
     &__title {
         font-family: $font-header;
@@ -15,12 +16,21 @@
     }
     &__menu {
         ul {
+            @include tablette-only {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                li a{
+                    padding: 0 1rem;
+                }
+            }
                 padding: 0;
                 li {
                     padding: 0;
                     margin: 0.5rem 0;
                     a {
                         color: white;
+                        font-size: 0.9rem;
                     }
                     i {
                         width: 1.5rem;

@@ -40,6 +40,11 @@
 .starters {
     padding: 0 1rem;
     &__title {
+        &--surligne{
+            color: $colour-tertiary;
+            font-size: 2rem;
+            font-weight: bold;
+        }
         margin: 1rem 0;
     }
     p {
