@@ -140,13 +140,13 @@
     padding: 1rem;
         &__card {
             width: 100%;
-            max-width: 450px;
+            max-width: 550px;
             overflow: hidden;
             background-color: white;
             border-radius: 1rem;
             box-shadow: 0 3px 10px 0 #aaa;
             margin: auto;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
             &:hover{
                 box-shadow: 2px 2px 10px $colour-footer;
             }
