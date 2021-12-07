@@ -1,13 +1,59 @@
+
+/* section affichage des restaurants */
+.restaurants {
+    background-color: $colour-header;
+    padding: 1rem;
+
+    /* passage du gris au blanc sur grand ecran */
+    @include desktop-only{
+        background-color: transparent;
+    }
+        &__card {
+            width: 100%;
+            max-width: 650px;
+            overflow: hidden;
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 3px 10px 0 #aaa;
+            margin: auto;
+            margin-bottom: 3rem;
+            @include desktop-only {
+                max-width: 45%;
+            }
+            &:hover{
+                box-shadow: 2px 2px 10px $colour-footer;
+            }
+                a{
+                    height: 100%;
+                    cursor: pointer;
+                }
+        }
+
+        /* affichage sur plusieurs lignes */
+        &__display{
+            @include desktop-only {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+        }
+}
+
+
 .card{
     &__img {
         height: 150px;
         overflow: hidden;
         position: relative;
+
+        /* augmentation de l'espace pris par l'image dans la card */
+        @include tablette-only{
+            height: 250px;
+        }
             img{
                 width: 100%;
                 margin: 0;
                 object-fit: contain;
-                top: -50%;
                 position: absolute;
                 object-fit: cover;
             }
@@ -21,6 +67,8 @@
                 color: darken($colour-tertiary, 40);
             }
     }
+
+    /* nom et lieu du restaurant */
     &__body {
         display: flex;
         justify-content: space-between;
@@ -43,6 +91,8 @@
             margin-bottom: 0.7rem;
         }
     }
+
+    /* creation de la checkbox favorite */
     &__favorite {
         input {
             position: absolute;
@@ -51,6 +101,8 @@
         & label{
             cursor: pointer;
             position: relative;
+
+            /*coeur qui change de couleur quand on clique sur le label*/
             & .far {
                 transition: opacity 250ms;
             }

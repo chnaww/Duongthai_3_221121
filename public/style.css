@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -74,6 +75,7 @@ header {
 .header__logo {
   text-align: center;
   position: relative;
+  /* positionnement de la flèche retour */
 }
 .header__logo a {
   position: absolute;
@@ -98,9 +100,10 @@ header {
   cursor: pointer;
   position: relative;
   z-index: 1;
+  /* effet d'éclaircissement avec une ombre au hover */
 }
 .button__layout button:hover::after {
-  opacity: 1;
+  opacity: 0.2;
 }
 .button__layout button::after {
   content: "";
@@ -109,7 +112,7 @@ header {
   right: 0;
   bottom: 0;
   left: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background-color: white;
   opacity: 0;
   z-index: -1;
   transition: opacity 250ms;
@@ -117,16 +120,67 @@ header {
   box-shadow: 2px 2px 10px #9356DC;
 }
 
+/* section affichage des restaurants */
+.restaurants {
+  background-color: #F6F6F6;
+  padding: 1rem;
+  /* passage du gris au blanc sur grand ecran */
+  /* affichage sur plusieurs lignes */
+}
+@media screen and (min-width: 991px) {
+  .restaurants {
+    background-color: transparent;
+  }
+}
+.restaurants__card {
+  width: 100%;
+  max-width: 650px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 3px 10px 0 #aaa;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 991px) {
+  .restaurants__card {
+    max-width: 45%;
+  }
+}
+.restaurants__card:hover {
+  box-shadow: 2px 2px 10px #353535;
+}
+.restaurants__card a {
+  height: 100%;
+  cursor: pointer;
+}
+@media screen and (min-width: 991px) {
+  .restaurants__display {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  /* nom et lieu du restaurant */
+  /* creation de la checkbox favorite */
+}
 .card__img {
   height: 150px;
   overflow: hidden;
   position: relative;
+  /* augmentation de l'espace pris par l'image dans la card */
+}
+@media screen and (min-width: 768px) {
+  .card__img {
+    height: 250px;
+  }
 }
 .card__img img {
   width: 100%;
   margin: 0;
   object-fit: contain;
-  top: -50%;
   position: absolute;
   object-fit: cover;
 }
@@ -166,6 +220,7 @@ header {
 .card__favorite label {
   cursor: pointer;
   position: relative;
+  /*coeur qui change de couleur quand on clique sur le label*/
 }
 .card__favorite label .far {
   transition: opacity 250ms;
@@ -189,6 +244,7 @@ header {
   opacity: 0;
 }
 
+/* div loading spinner qui recouvre l'intégratité de la page du site web*/
 .loading {
   position: absolute;
   left: 50%;
@@ -199,6 +255,7 @@ header {
   opacity: 0.5;
   animation: hide-loading 3s;
   animation-fill-mode: forwards;
+  /* loading spinner qui tourne pendant 3sec */
 }
 .loading i {
   margin: auto;
@@ -207,6 +264,7 @@ header {
   animation-fill-mode: forwards;
 }
 
+/* animation du loading spinner avec une rotation et un changement d'opacity */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -221,11 +279,15 @@ header {
     opacity: 0;
   }
 }
+/* div opacity qui englobe le code de la page
+ d'accueil afin de le cacher pendant la durée du loadingspinner */
 .opacity {
   animation: opacity 1s 2.5s;
   animation-fill-mode: backwards;
 }
 
+/* keyframe animation pour gérer 
+l'apparition du contenu du site apres le loading spinner */
 @keyframes opacity-accueil {
   from {
     opacity: 0;
@@ -234,11 +296,14 @@ header {
     opacity: 1;
   }
 }
+/* keyframe appliquée a la div loading afin 
+qu'elle ne gêne plus après avoir changer d'opacity 0*/
 @keyframes hide-loading {
   to {
     z-index: -9999;
   }
 }
+/* section localisation */
 .location {
   display: flex;
   flex-direction: column;
@@ -261,6 +326,7 @@ header {
   font-size: 1.5rem;
 }
 
+/* section fonctionalité */
 .function {
   padding: 1.5rem 1rem;
   margin-bottom: 1rem;
@@ -270,6 +336,7 @@ header {
   flex-direction: column;
   align-content: center;
   padding: 0 1rem;
+  /* affichage en ligne */
 }
 @media screen and (min-width: 768px) {
   .function__list {
@@ -281,6 +348,7 @@ header {
 .function__button {
   display: inline-flex;
   align-items: center;
+  /* puce numérotée pour les différentes étapes de fonctionnement */
 }
 .function__button p {
   padding: 0.5rem 0.7rem;
@@ -303,6 +371,7 @@ header {
   height: 70px;
   max-width: 500px;
   cursor: pointer;
+  /* changement de couleur de l'icone et du fond au hover */
 }
 .function__button button:hover {
   background-color: #e4d5f6;
@@ -319,49 +388,11 @@ header {
 .function__button button span {
   font-size: 0.8rem;
   font-weight: bolder;
+  /* occuper mieux l'espace en desktop */
 }
 @media screen and (min-width: 991px) {
   .function__button button span {
     font-size: 1rem;
-  }
-}
-
-.restaurants {
-  background-color: #F6F6F6;
-  padding: 1rem;
-}
-@media screen and (min-width: 991px) {
-  .restaurants {
-    background-color: transparent;
-  }
-}
-.restaurants__card {
-  width: 100%;
-  max-width: 650px;
-  overflow: hidden;
-  background-color: white;
-  border-radius: 1rem;
-  box-shadow: 0 3px 10px 0 #aaa;
-  margin: auto;
-  margin-bottom: 3rem;
-}
-@media screen and (min-width: 991px) {
-  .restaurants__card {
-    max-width: 45%;
-  }
-}
-.restaurants__card:hover {
-  box-shadow: 2px 2px 10px #353535;
-}
-.restaurants__card a {
-  height: 100%;
-  cursor: pointer;
-}
-@media screen and (min-width: 768px) {
-  .restaurants__display {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
   }
 }
 
@@ -376,6 +407,7 @@ header {
   object-fit: cover;
 }
 
+/* menu qui vient par dessus la bannière de 15% */
 .menu {
   margin-top: -15%;
   background-color: #F6F6F6;
@@ -406,8 +438,14 @@ header {
   }
 }
 
+/* carte menu restaurant */
 .starters {
   margin: 0 1rem;
+}
+@media screen and (min-width: 991px) {
+  .starters {
+    min-width: 30%;
+  }
 }
 .starters__title {
   margin: 1rem 0;
@@ -422,12 +460,12 @@ header {
   font-size: 0.9rem;
 }
 
+/* plat des menus */
 .dish {
   border-radius: 1rem;
   background-color: white;
   border: none;
   margin: auto;
-  height: 70px;
   cursor: pointer;
   max-width: 650px;
   margin-bottom: 0.5rem;
@@ -436,6 +474,10 @@ header {
   align-items: center;
   overflow: hidden;
   height: 80px;
+  /* bouton selection qui apparait lors du clic sur un plat avec rotation du bouton */
+  /* ajustement du contener descriptif des plats lors du hover */
+  /* position initiale du bouton qui est caché par une translation */
+  /* animation d'apparition en décalée des plats*/
 }
 .dish:hover .dish__selection {
   transform: translateX(0);
@@ -488,6 +530,7 @@ header {
 .dish__anim {
   animation: opacity 1000ms;
   animation-fill-mode: backwards;
+  /* creation du nombre de classe égal au nombre de plat*/
 }
 .dish__anim--1 {
   animation-delay: 230.7692307692ms;
@@ -529,6 +572,7 @@ header {
   animation-delay: 3000ms;
 }
 
+/* keyframe d'animation d'apparition des plats*/
 @keyframes opacity {
   from {
     opacity: 0;
